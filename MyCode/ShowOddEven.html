@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+	<head>
+		<title> This is small js app</title>
+	</head>
+	<body>
+		<p>
+			You want to see odd/Even From value <input type="text" name="valueOne" id="valueOne" placeholder="NumberOne"> to
+			<input type="text" name="valueTwo" id="valueTwo" placeholder="NumberTwo"><br/>
+			<input type="submit" name="Submit" id="Submit" value="Submit" onclick="myOddEvenShowTime()">
+		</p>
+		<script type="text/javascript">
+		function myOddEvenShowTime()
+		{
+			var numbOne = document.getElementById("valueOne").value;
+			var numbTwo = document.getElementById("valueTwo").value;
+			for(var i = numbOne;i<=numbTwo;i++)
+			{
+				if(i%2 == 0)
+				{
+					document.write(i+" is Even Value <br/>");
+				}
+				else
+				{
+					document.write(i+" is odd Value <br/>");
+				}
+			}
+			
+
+		}
+
+		</script>
+
+
+	</body>
+</html>
