@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<p>
-			You want to see odd/Even From value <input type="text" name="valueOne" id="valueOne" placeholder="NumberOne"> to
-			<input type="text" name="valueTwo" id="valueTwo" placeholder="NumberTwo"><br/>
+			You want to see odd/Even From value <input type="text" name="valueOne" id="valueOne" placeholder="NumberOne" required> to
+			<input type="text" name="valueTwo" id="valueTwo" placeholder="NumberTwo" required><br/>
 			<input type="submit" name="Submit" id="Submit" value="Submit" onclick="myOddEvenShowTime()">
 		</p>
 		<script type="text/javascript">
@@ -15,6 +15,11 @@
 		{
 			var numbOne = document.getElementById("valueOne").value;
 			var numbTwo = document.getElementById("valueTwo").value;
+
+			var validity = validation(numbOne,numbTwo);
+
+			if(validity == true)
+			{
 			for(var i = numbOne;i<=numbTwo;i++)
 			{
 				if(i%2 == 0)
@@ -26,8 +31,24 @@
 					document.write(i+" is odd Value <br/>");
 				}
 			}
-			
+			}
+			else
+			{
+				alert("Please enter  second value lager than first value ");
+			}
 
+		}
+
+		function validation(firstNumb,secondNumb)
+		{
+			if(firstNumb>secondNumb || firstNumb == 0 || secondNumb == 0)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
 		}
 
 		</script>
