@@ -1,0 +1,105 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>My Web Form </title>
+
+	</head>
+
+	<body>
+		<section name = "introdution">
+			<h1><b>Introduction</b></h1>
+			<p>This is actually for testing purposes.This is not created for Database accessing and other advance features.But it implement some validations like age validations and email validations</p>
+		</section>
+		<section name="BodyOfForm">
+			<table width="100%" height="100%" border="0px">
+				<tr>
+					<td>
+						Name
+					</td>
+					<td>
+						<input type ="text" placeholder="Give name" id="Name" name="Name" required>
+					</td>
+						
+				</tr>
+
+				<tr>
+					<td>
+						Age
+					</td>
+					<td>
+						<input type ="text" placeholder="Give Age" id="Age" name="Age" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						E-Mail
+					</td>
+					<td>
+						<input type ="text" placeholder="Give Email" id="Email" name="Email" required>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						Password
+					</td>
+					<td>
+						<input type ="password" placeholder="Give Password" id="Password" name="Password" required>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						Confirm Password
+					</td>
+					<td>
+						<input type ="password" placeholder="Confirm Password" id="ConfirmPass" name="ConfirmPass" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type ="submit" value="Submit Now" id="SubmitNow" name="SubmitNow" onclick="sendForm()">
+					</td>
+
+				</tr>
+			</table>
+		</section>
+		<script type="text/javascript">
+			//asigning values to variables
+			function sendForm()
+			{
+				var name = document.getElementById("Name").value;
+				var age = document.getElementById("Age").value;
+				var email = document.getElementById("Email").value;
+				var password = document.getElementById("Password").value;
+				var ConfirmPassword = document.getElementById("ConfirmPass").value;
+
+			//js functions calling
+
+				var validity = checkValidation(age,email,password,ConfirmPassword);
+
+				function checkValidation(age,email,password,ConfirmPassword)
+				{
+					var result = null;
+					result = checkMail(email);
+					result = checkPass(password,ConfirmPassword);
+
+				}
+				function checkMail(email)
+					{
+
+					}
+				function checkPass(password,ConfirmPassword)
+				{
+					
+				}
+
+			}
+		</script>
+
+	</body>
+
+
+</html>
