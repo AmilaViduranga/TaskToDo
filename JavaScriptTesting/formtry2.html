@@ -77,30 +77,30 @@
 <script type="text/javascript">
 function ManageLogin()
 {
-	var result = true;
+	
 	var username = document.getElementById("userName").value;
 	var email = document.getElementById("userEmail").value;
 	var password = document.getElementById("userPassword").value;
 	var confirmPass = document.getElementById("userConfirm").value;
-	 result = function()
-					{
-						if(email.indexOf("@") == 0 && email.indexOf(".") == 0)
+	var result;
+						if(email.indexOf("@") == -1 && email.indexOf(".") == -1)
 						{
-							return false;
+							
+							result = false;
 						}
 						if(email.indexOf("@") > email.indexOf("."))
 						{
-							return false;
+							result = false;
 						}
 						if(password.length != 8)
 						{
-							return false;
+							result = false;
 						}
 						if(password != confirmPass)
 						{
-							return false;
+							result = false;
 						}
-					};
+					
 					
 			if(result == false)
 			{
@@ -109,6 +109,7 @@ function ManageLogin()
 			else
 			{
 				alert("Successfully login");
+				alert("Name is "+username+" Email is "+email+" password is "+password);
 			}
 	
 	
@@ -118,3 +119,4 @@ function ManageLogin()
 </script>
 </body>
 </html>
+
